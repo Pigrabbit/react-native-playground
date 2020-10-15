@@ -15,6 +15,10 @@ import {
   Text,
   StatusBar,
   Image,
+  TouchableWithoutFeedback,
+  TouchableOpacity,
+  Button,
+  Alert,
 } from 'react-native';
 
 import {
@@ -42,17 +46,29 @@ const App = () => {
           <View style={styles.body}>
             <View style={styles.sectionContainer}>
               <Text style={styles.sectionTitle}>Getting started</Text>
-              <Image
-                style={styles.image}
-                source={{
-                  uri:
-                    'https://codersera.com/blog/wp-content/uploads/2019/02/react-native.png',
-                }}
-              />
+              <TouchableOpacity>
+                <Image
+                  style={styles.image}
+                  source={{
+                    uri:
+                      'https://codersera.com/blog/wp-content/uploads/2019/02/react-native.png',
+                  }}
+                />
+              </TouchableOpacity>
               <Text style={styles.sectionDescription}>
                 Let's crash react-native. I hope that I could build cool cross
                 platform mobile application after this course.
               </Text>
+              <Button
+                color="orange"
+                title="Register"
+                onPress={() =>
+                  Alert.alert('confirm registration', 'Want to register?', [
+                    {text: "Let's get it"},
+                    {text: 'next time'},
+                  ])
+                }
+              />
             </View>
             <View style={styles.sectionContainer}>
               <Text style={styles.sectionTitle}>Step One</Text>
